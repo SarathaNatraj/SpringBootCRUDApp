@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Error</title>
+     <link rel="stylesheet" href="style.css" th:href="@{style.css}"/>
+   <title th:text="${message}"></title>
+   
+<th:block  th:include="header" />
+</head>
+<body>
+<div align="center">
+<img src="error404.webp" />
+<table border="1">
+  <tr><td>Error Message</td><td th:text="${message}"></td></tr>
+  <tr><td>Status Code</td><td th:text="${status}"></td></tr>
+  <tr><td>Exception</td><td th:text="${exception}"></td></tr>
+  <tr><td>Stacktrace</td><td><pre th:text="${trace}"></pre></td></tr>
+  <tr><td>Binding Errors</td><td th:text="${errors}"></td></tr>
+</table>
+</div>
+
+		<a href="/dashboard">Back</a> <br /> <br />
+	
+	<th:block th:include="footer" />
+</body>
+   
+   </html>

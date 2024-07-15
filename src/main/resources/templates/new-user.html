@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+        <link rel="stylesheet" href="style.css" th:href="@{style.css}"/>
+
+<title>Create New User</title>
+</head>
+<body>
+<div >
+	
+<div  align="center"> 
+	<h1>Create New User</h1>
+	<br/>
+	
+	<form action="#" th:action ="@{/save-user}"  th:object ="${user}">  
+	
+		<table border="0" cellpadding="10">
+			<tr>
+				<td> User Name:</td>
+				<td> <input type="text" th:field="*{userName}" /><td>
+				<td>
+				<span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"> </span> </td>
+			</tr>
+			<tr>
+				<td> Password:</td>
+				<td> <input type="password" th:field="*{password}" /><td>
+				<td>
+				<span  style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"> </span> </td>
+		
+			</tr>
+				<tr>
+				<td> Email:</td>
+				<td> <input type="text" th:field="*{email}" /><td>
+				<td>
+				<span  style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </span> </td>
+		
+			</tr>
+		
+			<tr>
+				<td colspan="2"><button type="submit">Save</button> </td>
+			</tr>
+		<p>
+		<span th:if= "${message}" th:text="${message}"  /> </p>
+		</div>
+			
+		
+			
+		</table>
+    
+  	</form>  
+	
+	
+		<a href="/">Back</a> <br /> <br />
+	
+	
+	</div>
+	
+</body>
+</html>

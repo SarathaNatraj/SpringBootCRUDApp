@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Order</title>
+        <link rel="stylesheet" href="style.css" th:href="@{style.css}"/>
+
+<th:block  th:include="header" />
+</head>
+<body>
+<div  align="center"> 
+	<h1>Edit  Order</h1>
+	<br/>
+	
+	<form action="#" th:action ="@{/save-order-byid}" method="post" th:object ="${order}">  
+	
+		<table border="0" cellpadding="10">
+		
+		<tr>
+				<td> Order Id:</td>
+				<td> <input type="text" th:field="*{id}"  readonly="readonly" /><td>
+			</tr>
+			<tr>
+				<td>  Name:</td>
+				<td> <input type="text" th:field="*{name}" /><td>
+			</tr>
+			<tr>
+				<td> Product List:</td>
+				<td> <select th:field="*{productid}" >
+						<option th:each="product : ${listOfProds}" th:value="${product.id}" th:text="${product.name}" ></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Count:</td>
+				<td> <input type="text" th:field="*{count}" /><td>
+			</tr>
+		
+			
+			
+			<tr>
+				<td colspan="2"><button type="submit">Save</button> </td>
+			</tr>
+			
+		
+			
+		</table>
+    
+  	</form>  
+	
+	
+		<a href="/dashboard">Back</a> <br /> <br />
+	
+	
+	</div>
+
+
+	<th:block th:include="footer" />
+</body>
+</html>

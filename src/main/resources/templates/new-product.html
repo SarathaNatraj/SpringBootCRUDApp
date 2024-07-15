@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create New Product</title>
+        <link rel="stylesheet" href="style.css" th:href="@{style.css}"/>
+
+</head>
+<th:block  th:include="header" />
+<body>
+
+	
+	<div  align="center"> 
+	<h1>Create New Product</h1>
+	<br/>
+	
+	<form action="#" th:action ="@{/save}" method="post" th:object ="${product}">  
+	
+		<table border="0" cellpadding="10">
+			<tr>
+				<td> Product Name:</td>
+				
+				<td> <input type="text" th:field="*{name}" /><td>
+			</tr>
+			<tr>
+				<td> Brand:</td>
+				<td> <input type="text" th:field="*{brand}" /><td>
+			</tr>
+			<tr>
+				<td> Made In:</td>
+				<td> <input type="text" th:field="*{madein}" /><td>
+			</tr>
+		
+			<tr>
+				<td> Price:</td>
+				<td> <input type="text" th:field="*{price}" /><td>
+			</tr>
+			
+			<tr>
+				<td colspan="2"><button type="submit">Save</button> </td>
+			</tr>
+			
+		
+			
+		</table>
+    
+  	</form>  
+	
+	
+		<a href="/dashboard">Back</a> <br /> <br />
+	
+	
+	</div>
+
+	<th:block th:include="footer" />
+</body>
+</html>
